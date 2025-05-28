@@ -154,10 +154,6 @@
   .weather-tabs-location-input input {
     border: none;
   }
-  .get-weather-button {
-    border: none;
-    background-color: #907aa9;
-  }
 
   .weather-tabs-forecast-item {
     height: 100%;
@@ -227,5 +223,11 @@
     font-weight: 300;
     display: flex;
     justify-content: space-between;
+  }
+
+  .get-weather-button {
+    border: none;
+    background-color: #907aa9;
+    cursor: pointer;
   }
 }
