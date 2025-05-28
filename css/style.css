@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer reset {
+  /* 1. Use a more-intuitive box-sizing model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  /* 3. Enable keyword animations */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 6. Improve media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 7. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 8. Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 9. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /*
+  10. Create a root stacking context
+*/
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+@layer customs {
+  :root {
+    --border-radius-sm: 0.25rem;
+    --border-radius-reg: 0.5rem;
+    --border-radius-lg: 1rem;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    font-family: "Montserrat Alternates", sans-serif;
+    color: #575279;
+  }
+}
+
+@layer layout {
+  main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-weather-card {
+    background-color: #faf4ed;
+    max-width: 1000px;
+    height: auto;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .current-temp {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 1rem;
+    display: flex;
+  }
+
+  .current-conditions {
+    grid-area: 1 / 2 / 2 / 4;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .weather-tabs {
+    grid-area: 2 / 1 / 4 / 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20% 80%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .weather-tabs-location-input {
+    display: flex;
+    grid-column: span 4;
+    background-color: #d7827e;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .weather-tabs-location-input input {
+    border: none;
+  }
+  .get-weather-button {
+    border: none;
+    background-color: #907aa9;
+  }
+
+  .weather-tabs-forecast-item {
+    height: 100%;
+  }
+
+  .weather-tabs-forecast-item + .weather-tabs-forecast-item {
+    border-left: 2px solid grey;
+  }
+
+  @media (width < 760px) {
+    .main-weather-card {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 2.5fr;
+    }
+
+    .current-temp,
+    .current-conditions {
+      grid-area: span 1 / span 1;
+    }
+
+    .weather-tabs {
+      grid-area: span 1 / span 1;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+    }
+
+    .weather-tabs-location-input {
+      grid-column: span 2;
+    }
+  }
+}
+
+@layer components {
+  .current-temp-icon {
+    font-size: 5rem;
+    margin-left: 2rem;
+    align-self: end;
+  }
+
+  .current-temp-text {
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: end;
+  }
+
+  .current-conditions-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .location-text {
+    margin-bottom: 1rem;
+  }
+
+  .weather-tabs-forecast-item {
+    display: flex;
+    flex-direction: column;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .forecast-icon {
+    font-size: 3rem;
+  }
+
+  .forecast-temp {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/weather-icons.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="main-weather-card">
+        <div class="current-temp">
+          <span class="current-temp-icon"
+            ><i class="wi wi-night-rain"></i
+          ></span>
+          <p class="current-temp-text">15°</p>
+        </div>
+        <div class="current-conditions">
+          <p class="location-text"></p>
+          <p class="current-conditions-text">
+            Partly cloudy throughout the day with a chance of rain throughout
+            the day.
+          </p>
+        </div>
+        <div class="weather-tabs">
+          <div class="weather-tabs-location-input">
+            <input
+              type="text"
+              name="location-input"
+              id="location-input"
+              placeholder="Enter a location!"
+            />
+            <button class="get-weather-button">Get Weather</button>
+          </div>
+          <div class="weather-tabs-forecast-item">
+            <i class="wi wi-partly-cloudy-day forecast-icon"></i>
+            <p class="forecast-text">Partly cloudy throughout the day.</p>
+            <div class="forecast-temp">
+              <span class="min">Min: 8.5°</span
+              ><span class="max">Max: 15.7°</span>
+            </div>
+          </div>
+          <div class="weather-tabs-forecast-item">
+            <i class="wi wi-partly-cloudy-day forecast-icon"></i>
+            <p class="forecast-text">Partly cloudy throughout the day.</p>
+            <div class="forecast-temp">
+              <span class="min">Min: 14.8°</span
+              ><span class="max">Max: 20.7°</span>
+            </div>
+          </div>
+          <div class="weather-tabs-forecast-item">
+            <i class="wi wi-partly-cloudy-day forecast-icon"></i>
+            <p class="forecast-text">Partly cloudy throughout the day.</p>
+            <div class="forecast-temp">
+              <span class="min">Min: 12.5°</span
+              ><span class="max">Max: 23.3°</span>
+            </div>
+          </div>
+          <div class="weather-tabs-forecast-item">
+            <i class="wi wi-rain forecast-icon"></i>
+            <p class="forecast-text">
+              Partly cloudy throughout the day with a chance of rain.
+            </p>
+            <div class="forecast-temp">
+              <span class="min">Min: 12.7°</span
+              ><span class="max">Max: 21.2°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
