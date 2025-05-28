@@ -159,14 +159,11 @@
     height: 100%;
   }
 
-  .weather-tabs-forecast-item + .weather-tabs-forecast-item {
-    border-left: 2px solid grey;
-  }
-
   @media (width < 760px) {
     .main-weather-card {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 2.5fr;
+      width: 100%;
     }
 
     .current-temp,
@@ -177,7 +174,7 @@
     .weather-tabs {
       grid-area: span 1 / span 1;
       grid-template-columns: 1fr 1fr;
-      grid-auto-rows: 1fr;
+      grid-template-rows: 20% 40% 40%;
     }
 
     .weather-tabs-location-input {
@@ -213,6 +210,13 @@
     flex-direction: column;
     padding-block: 2rem;
     padding-inline: 1rem;
+  }
+  .weather-tabs-forecast-item:nth-last-child(-n + 2) {
+    border-top: 1px solid grey;
+  }
+
+  .weather-tabs-forecast-item + .weather-tabs-forecast-item {
+    border-left: 1px solid grey;
   }
 
   .forecast-icon {
