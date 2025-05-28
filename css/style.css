@@ -151,10 +151,6 @@
     justify-content: center;
   }
 
-  .weather-tabs-location-input input {
-    border: none;
-  }
-
   .weather-tabs-forecast-item {
     height: 100%;
   }
@@ -204,6 +200,16 @@
   .location-text {
     margin-bottom: 1rem;
   }
+  #location-input {
+    border: none;
+    height: 2rem;
+  }
+  .get-weather-button {
+    border: none;
+    background-color: #907aa9;
+    cursor: pointer;
+    height: 2rem;
+  }
 
   .weather-tabs-forecast-item {
     display: flex;
@@ -227,11 +233,5 @@
     font-weight: 300;
     display: flex;
     justify-content: space-between;
-  }
-
-  .get-weather-button {
-    border: none;
-    background-color: #907aa9;
-    cursor: pointer;
   }
 }
